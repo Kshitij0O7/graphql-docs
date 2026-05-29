@@ -4,6 +4,10 @@ description: "Example GraphQL queries for Cardano blocks. Look up a block by hei
 keywords: [Cardano API examples, Cardano GraphQL queries, Bitquery, Cardano blocks, epoch, slot]
 ---
 
+<head>
+  <link rel="canonical" href="https://docs.bitquery.io/docs/blockchain/Cardano/blocks/" />
+</head>
+
 # Cardano Blocks API
 
 Query Cardano block data — heights, hashes, epoch and slot context, sizes, protocol versions, slot-leader metadata, and transaction counts — using the Blocks API.

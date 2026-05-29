@@ -4,6 +4,10 @@ description: "Example GraphQL queries for Bitcoin coinpath and fund flow data. T
 keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
 ---
 
+<head>
+  <link rel="canonical" href="https://docs.bitquery.io/docs/blockchain/Bitcoin/bitcoin-coinpath-api/" />
+</head>
+
 # Coinpath API
 
 The Bitcoin Coinpath API traces the flow of funds between addresses on the Bitcoin blockchain. Use it for AML investigations, source-of-funds verification, and mapping transaction paths between wallets. See [Coinpath Explained](/docs/building-queries/Coinpath-Explained/Overview) for a detailed guide.

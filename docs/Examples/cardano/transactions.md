@@ -4,6 +4,10 @@ description: "Example GraphQL queries for Cardano transactions. Get tx details f
 keywords: [Cardano API examples, Cardano GraphQL queries, Bitquery, Cardano transactions, mintCount, feeValue]
 ---
 
+<head>
+  <link rel="canonical" href="https://docs.bitquery.io/docs/blockchain/Cardano/transactions/" />
+</head>
+
 # Cardano Transactions API
 
 Query Cardano transactions with input and output totals, fees in ADA and USD, mint and withdrawal counts, and block context using the Transactions API.

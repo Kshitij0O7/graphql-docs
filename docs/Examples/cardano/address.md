@@ -13,6 +13,10 @@ keywords:
   ]
 ---
 
+<head>
+  <link rel="canonical" href="https://docs.bitquery.io/docs/blockchain/Cardano/address/" />
+</head>
+
 # Cardano Address API
 
 Look up Cardano wallet data with the `address` cube (balances per asset, including native tokens, plus staking details on Shelley-era addresses) and the `addressStats` cube (pre-aggregated activity metrics — inflows, outflows, transaction counts, first/last active). Replace the example addresses with your own target wallet.

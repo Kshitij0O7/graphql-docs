@@ -12,6 +12,10 @@ keywords:
   ]
 ---
 
+<head>
+  <link rel="canonical" href="https://docs.bitquery.io/docs/blockchain/Cardano/mints/" />
+</head>
+
 # Cardano Mints API
 
 Cardano native tokens are created and destroyed through **minting policies** rather than smart contracts. The Mints API returns on-chain mint and burn events with the minting transaction, policy-based asset identifiers, amounts, and block context — useful for tracking NFT collection drops, fungible-token issuance, and supply changes.

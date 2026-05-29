@@ -4,6 +4,10 @@ description: "Example GraphQL queries for Cardano Coinpath. Trace ADA flows in a
 keywords: [Cardano API examples, Cardano GraphQL queries, Bitquery, Cardano coinpath, fund tracing, eUTXO]
 ---
 
+<head>
+  <link rel="canonical" href="https://docs.bitquery.io/docs/blockchain/Cardano/coinpath/" />
+</head>
+
 # Cardano Coinpath API
 
 Coinpath traces the flow of funds between Cardano addresses across multiple hops. Because Cardano uses an **eUTXO** model, the API walks chains of UTXOs forward (outbound) and backward (inbound) from an initial address, returning senders, receivers, hop depth, and aggregate amounts — useful for compliance checks, treasury tracing, and address-relationship analysis.

@@ -4,6 +4,10 @@ description: "Example GraphQL queries for Bitcoin Omni Layer data. Get Omni tran
 keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
 ---
 
+<head>
+  <link rel="canonical" href="https://docs.bitquery.io/docs/blockchain/Bitcoin/bitcoin-omni-transactions/" />
+</head>
+
 # Bitcoin OmniTransactions and OmniTransfers API
 
 The Omni Layer is a protocol built on top of Bitcoin for creating and trading custom tokens (like USDT on Bitcoin). These APIs return Omni-specific transaction and transfer data.

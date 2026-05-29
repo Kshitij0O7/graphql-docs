@@ -5,6 +5,10 @@ keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
 slug: /examples/Bitcoin/
 ---
 
+<head>
+  <link rel="canonical" href="https://docs.bitquery.io/docs/blockchain/Bitcoin/" />
+</head>
+
 # Bitcoin API Documentation
 
 This section contains Bitcoin API/Streams examples and guides, organized into categories for easier navigation. This is not exhaustive; we will add more examples as users request different scenarios. Also available in real-time via [Bitquery Kafka Streams](https://docs.bitquery.io/docs/streams/protobuf/chains/Bitcoin-protobuf/). Please contact sales for trial credentials.

@@ -4,6 +4,10 @@ description: "Example GraphQL queries for Bitcoin address data. Get balances, in
 keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery, Bitcoin balance API, Bitcoin UTXO, BTC address balance, Bitcoin wallet balance, Bitcoin inputs outputs]
 ---
 
+<head>
+  <link rel="canonical" href="https://docs.bitquery.io/docs/blockchain/Bitcoin/bitcoin-address-api/" />
+</head>
+
 # BTC Balance API
 
 Bitquery's Bitcoin Input and Output APIs let you query any address on the Bitcoin blockchain. The recommended way to calculate a Bitcoin address balance is to sum all outputs (received) and subtract all inputs (spent). This approach works directly with on-chain UTXO data, giving you accurate and verifiable results. You can also retrieve historical USD values because Bitquery stores the BTC price at the time of each transaction.

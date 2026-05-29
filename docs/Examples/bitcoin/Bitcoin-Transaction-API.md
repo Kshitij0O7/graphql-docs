@@ -4,6 +4,10 @@ description: "Example GraphQL queries for Bitcoin transactions. Get latest txs, 
 keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
 ---
 
+<head>
+  <link rel="canonical" href="https://docs.bitquery.io/docs/blockchain/Bitcoin/bitcoin-transactions-api/" />
+</head>
+
 # Transaction API
 
 The Bitcoin Transaction API returns detailed transaction data including inputs, outputs, fees, block context, and USD values. Works with query variables for flexible pagination and date filtering.

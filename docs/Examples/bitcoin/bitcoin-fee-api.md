@@ -4,6 +4,10 @@ description: "Example GraphQL queries for Bitcoin transaction fees. Get per-tx f
 keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
 ---
 
+<head>
+  <link rel="canonical" href="https://docs.bitquery.io/docs/blockchain/Bitcoin/bitcoin-fee-api/" />
+</head>
+
 # Bitcoin Fee API
 
 Query Bitcoin transaction fees with per-transaction breakdowns and aggregate totals in both BTC and USD. Useful for fee estimation, cost analysis, and wallet expense tracking.

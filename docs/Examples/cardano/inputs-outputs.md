@@ -13,6 +13,10 @@ keywords:
   ]
 ---
 
+<head>
+  <link rel="canonical" href="https://docs.bitquery.io/docs/blockchain/Cardano/inputs-outputs/" />
+</head>
+
 # Cardano Inputs and Outputs API
 
 Cardano uses an **eUTXO** model, so balances and activity for an address are reconstructed from its `inputs` (funds spent) and `outputs` (funds received). These APIs return raw UTXO-level data with transaction hashes, indexes, values in ADA and USD, and timestamps.

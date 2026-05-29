@@ -15,6 +15,10 @@ keywords:
   ]
 ---
 
+<head>
+  <link rel="canonical" href="https://docs.bitquery.io/docs/blockchain/Cardano/djed/" />
+</head>
+
 # Djed Stablecoin API
 
 [Djed](https://djed.xyz) is an overcollateralized, crypto-backed stablecoin on Cardano. It is issued by COTI and was designed and implemented in collaboration with Input Output Global. Djed is a USD-pegged stablecoin (ticker **DJED**, asset name `DjedMicroUSD`) backed by ADA reserves — every issuance and redemption is a native-token **mint** or **burn** on Cardano. That means its on-chain footprint maps cleanly onto Bitquery's Cardano v1 primitives: mint activity through the `mints` API, holder balances through the `address` API, and transfers through the `inputs` / `outputs` APIs.

@@ -4,6 +4,10 @@ description: "Example GraphQL queries for Bitcoin block data. Get recent blocks,
 keywords: [Bitcoin API examples, Bitcoin GraphQL queries, Bitquery]
 ---
 
+<head>
+  <link rel="canonical" href="https://docs.bitquery.io/docs/blockchain/Bitcoin/bitcoin-blocks-api/" />
+</head>
+
 # Blocks API
 
 The Bitcoin Blocks API returns block-level data including height, difficulty, size, timestamps, and transaction counts. Use it for block explorer features, mining analytics, and network monitoring.
