@@ -405,6 +405,15 @@ const sidebars = {
                 "Examples/cardano/djed",
               ],
             },
+            {
+              type: "category",
+              label: "Celo",
+              items: [
+                "Examples/celo/celo-address-balances",
+                "Examples/celo/celo-address-profile",
+                "Examples/celo/celo-transaction-lookup",
+              ],
+            },
 
             {
               type: "category",

@@ -1,0 +1,7 @@
+{
+  "label": "Celo",
+  "link": {
+    "type": "generated-index",
+    "description": "Worked GraphQL query examples for the Celo blockchain"
+  }
+}

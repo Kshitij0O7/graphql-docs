@@ -1,0 +1,83 @@
+---
+title: "Celo Address Profile API Examples | Bitquery"
+description: "Build a Celo address detail page with one GraphQL query. Balance, USD value, inbound and outbound transfer counts, per-currency breakdowns, and first-seen / last-seen activity dates."
+keywords: [Celo, address profile, wallet detail, address activity, address balance, Bitquery, GraphQL, Celo API]
+---
+
+# Celo Address Profile API
+
+A Celo block explorer, wallet portfolio service, or compliance dashboard usually wants the same set of facts about an address rendered on one screen: how much CELO and stablecoin value sits there, how active the address has been, what tokens have moved through it, and when activity started and stopped. One Bitquery query covers all of this in a single call.
+
+## Combined Address Profile in One Query
+
+This query pulls balance, USD-converted balance, inbound transfer count and date range, outbound transfer count and date range, and per-currency breakdowns on both sides. It is the canonical query for a Celo address detail page.
+
+Open the [Celo address profile query in the Bitquery GraphQL IDE](https://ide.bitquery.io/Celo-Address-Profile) to run it.
+
+```graphql
+query MyQuery {
+  ethereum(network: celo_mainnet) {
+    address(
+      address: {is: "0x471EcE3750Da237f93B8E339c536989b8978a438"}
+    ) {
+      balance
+      balance_usd: balance(in: USD)
+    }
+    ins: transfers(
+      receiver: {is: "0x471EcE3750Da237f93B8E339c536989b8978a438"}
+    ) {
+      count
+      min_date: minimum(of: date)
+      max_date: maximum(of: date)
+    }
+    currencyIn: transfers(
+      receiver: {is: "0x471EcE3750Da237f93B8E339c536989b8978a438"}
+    ) {
+      count
+      currency {
+        symbol
+        address
+        tokenId
+      }
+    }
+    outs: transfers(
+      sender: {is: "0x471EcE3750Da237f93B8E339c536989b8978a438"}
+    ) {
+      count
+      min_date: minimum(of: date)
+      max_date: maximum(of: date)
+    }
+    currencyOut: transfers(
+      sender: {is: "0x471EcE3750Da237f93B8E339c536989b8978a438"}
+    ) {
+      count
+      currency {
+        symbol
+        address
+        tokenId
+      }
+    }
+  }
+}
+```
+
+The query uses GraphQL aliases (`ins`, `outs`, `currencyIn`, `currencyOut`) to fan out four `transfers` aggregations against the same address in one round trip. The result shape gives a frontend everything it needs to render an address detail page without a second call. The `count`, `minimum(of: date)`, and `maximum(of: date)` aggregates summarise activity without paginating individual transfer rows.
+
+Substitute the example address with any Celo wallet. The query holds the address in five places; for production use, generate the query from a template with the address substituted at request time, or use a GraphQL variable.
+
+## Adapting the Pattern
+
+A few practical adjustments:
+
+- **Add a date filter** to either or both of the `ins` and `outs` blocks to scope the profile to a specific window (e.g. `transfers(receiver: {is: ...}, date: {since: "2026-01-01"})`). Useful for "last 30 days" cards or year-to-date summaries.
+- **Add `currency: {is: ...}` filters** on the `currencyIn` / `currencyOut` blocks to break down activity by a specific stablecoin (cUSD, cEUR, cREAL) or token.
+- **Add a `success: true` clause** if the address detail page should ignore reverted transactions.
+
+## Related Resources
+
+- [Celo schema overview](https://docs.bitquery.io/v1/docs/Schema/celo/overview)
+- [Celo address schema reference](https://docs.bitquery.io/v1/docs/Schema/celo/address)
+- [Celo address stats schema reference](https://docs.bitquery.io/v1/docs/Schema/celo/addresstats)
+- [Celo Address Balances examples](https://docs.bitquery.io/v1/docs/Examples/celo/celo-address-balances)
+- [Celo Transaction Lookup examples](https://docs.bitquery.io/v1/docs/Examples/celo/celo-transaction-lookup)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)

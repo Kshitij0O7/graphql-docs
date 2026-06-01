@@ -1,0 +1,68 @@
+---
+title: "Celo Address Balance API Examples | Bitquery"
+description: "Query Celo address balances (CELO, cUSD, cEUR, cREAL, ERC-20 tokens) with Bitquery GraphQL. Batch balance reads at a point in time, historical treasury snapshots, and per-asset breakdowns."
+keywords: [Celo, CELO, cUSD, cEUR, cREAL, address balance, treasury, Bitquery, GraphQL, Celo API]
+---
+
+# Celo Address Balance API
+
+The Celo address balance API returns CELO and ERC-20 token balances for one or many addresses, optionally as of a specific point in time. Two query shapes cover most production workloads on Celo: a batch historical snapshot for treasury and accounting, and a current-balance read for a single address.
+
+## Batch Balance Snapshot at a Historical Date
+
+This query returns the balance of every CELO and ERC-20 token held by each address in a list, evaluated at the end of a specific date. It is the canonical query for month-end treasury accounting, audit reporting, or any workload that needs a fixed point-in-time snapshot of a corpus of addresses.
+
+Open the [Celo batch balance snapshot query in the Bitquery GraphQL IDE](https://ide.bitquery.io/Celo-Batch-Address-Balance-Snapshot) to run it.
+
+```graphql
+query MyQuery {
+  ethereum(network: celo_mainnet) {
+    address(
+      address: {in: ["0x471EcE3750Da237f93B8E339c536989b8978a438", "0xE8537a3d056DA446677B9E9d6c5dB704EaAb4787"]}
+    ) {
+      address
+      balances(date: {till: "2026-04-30T23:59:59"}) {
+        value
+        currency {
+          symbol
+          address
+          name
+        }
+      }
+    }
+  }
+}
+```
+
+The `address: {in: [...]}` filter accepts any number of Celo addresses, so one call covers an entire treasury corpus. The `date: {till: <ISO timestamp>}` clause evaluates each balance as of that moment, including historical positions for tokens that have since been moved. Without the `date` clause, the query returns current balances instead.
+
+## Current Balance for a Single Address
+
+A simpler shape for live UI: balance, USD-converted balance, and a sample of recently held tokens for one address.
+
+Open the [Celo current address balance query in the Bitquery GraphQL IDE](https://ide.bitquery.io/Celo-Current-Address-Balance) to run it.
+
+```graphql
+query MyQuery {
+  ethereum(network: celo_mainnet) {
+    address(
+      address: {is: "0x471EcE3750Da237f93B8E339c536989b8978a438"}
+    ) {
+      address
+      balance
+      balance_usd: balance(in: USD)
+    }
+  }
+}
+```
+
+`balance` returns the address's CELO holding. `balance(in: USD)` resolves through Bitquery's price oracle. Substitute the address with any Celo G-format wallet to render a per-account balance card on demand.
+
+## Related Resources
+
+- [Celo schema overview](https://docs.bitquery.io/v1/docs/Schema/celo/overview)
+- [Celo address schema reference](https://docs.bitquery.io/v1/docs/Schema/celo/address)
+- [Celo transfer schema reference](https://docs.bitquery.io/v1/docs/Schema/celo/transfers)
+- [Celo Transaction Lookup examples](https://docs.bitquery.io/v1/docs/Examples/celo/celo-transaction-lookup)
+- [Celo Address Profile examples](https://docs.bitquery.io/v1/docs/Examples/celo/celo-address-profile)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)

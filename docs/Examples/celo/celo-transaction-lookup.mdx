@@ -1,0 +1,97 @@
+---
+title: "Celo Transaction Lookup API Examples | Bitquery"
+description: "Look up Celo transactions and transfers by hash with Bitquery GraphQL. Fetch sender, receiver, amount, gas, block context, and currency details for forensic and compliance drilldowns."
+keywords: [Celo, transaction lookup, transfer lookup, transaction hash, forensic, compliance, Bitquery, GraphQL, Celo API]
+---
+
+# Celo Transaction Lookup API
+
+When a support ticket lands or a compliance review opens, the team needs to pull the full record of a specific Celo transaction by hash. Two query shapes cover the common cases: the transfer-level view (who sent what to whom, in which token) and the transaction-level view (gas, status, block context).
+
+## Look Up Transfers by Transaction Hash
+
+This query returns every transfer that occurred inside a given Celo transaction. A single transaction can carry one transfer (a simple CELO or cUSD payment) or many transfers (a router-driven multi-hop swap). The query covers both cases.
+
+Open the [Celo transfers by transaction hash query in the Bitquery GraphQL IDE](https://ide.bitquery.io/Copy-of-Celo-Transfers-by-Transaction-Hash) to run it.
+
+```graphql
+query MyQuery {
+  ethereum(network: celo_mainnet) {
+    transfers(
+      external: true
+      success: true
+      txHash: {is: "0x09b6ad345605d482419656e276b07d6512aaf207d51e0e396f18ef8cfd2c1554"}
+    ) {
+      amount
+      sender {
+        address
+      }
+      receiver {
+        address
+      }
+      currency {
+        name
+        symbol
+        address
+      }
+      gasValue
+      block {
+        height
+        timestamp {
+          time
+        }
+      }
+      transaction {
+        hash
+      }
+    }
+  }
+}
+```
+
+The `external: true` clause filters to top-level transfers and excludes internal contract-driven transfers, which is the right shape for most support and compliance drilldowns. Set it to `false` to include internal transfers. The `success: true` clause skips reverted transactions; drop it when investigating failed payments.
+
+## Transaction Details by Hash
+
+The transaction-level companion query: gas usage, status, sender, recipient contract, and block context. Useful when the question is "did this transaction succeed and what did it cost" rather than "who got what."
+
+Open the [Celo transaction details by hash query in the Bitquery GraphQL IDE](https://ide.bitquery.io/Celo-Transaction-Details-by-Hash) to run it.
+
+```graphql
+query MyQuery {
+  ethereum(network: celo_mainnet) {
+    transactions(
+      txHash: {is: "0x09b6ad345605d482419656e276b07d6512aaf207d51e0e396f18ef8cfd2c1554"}
+    ) {
+      hash
+      success
+      gasValue
+      gas
+      gasPrice
+      sender {
+        address
+      }
+      to {
+        address
+      }
+      block {
+        height
+        timestamp {
+          time
+        }
+      }
+    }
+  }
+}
+```
+
+Pair the two queries in a single client call (Bitquery's GraphQL supports multiple roots in one document) when the reconciler needs both transfer-level and transaction-level context in one round trip.
+
+## Related Resources
+
+- [Celo schema overview](https://docs.bitquery.io/v1/docs/Schema/celo/overview)
+- [Celo transactions schema reference](https://docs.bitquery.io/v1/docs/Schema/celo/transactions)
+- [Celo transfers schema reference](https://docs.bitquery.io/v1/docs/Schema/celo/transfers)
+- [Celo Address Balances examples](https://docs.bitquery.io/v1/docs/Examples/celo/celo-address-balances)
+- [Celo Address Profile examples](https://docs.bitquery.io/v1/docs/Examples/celo/celo-address-profile)
+- [Getting started with the GraphQL IDE](https://docs.bitquery.io/v1/docs/graphql-ide/how-to-start)
