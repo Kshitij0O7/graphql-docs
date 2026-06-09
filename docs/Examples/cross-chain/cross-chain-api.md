@@ -92,19 +92,6 @@ query ($address: String!) {
       }
     }
   }
-  velas: ethereum(network: velas) {
-    address(address: {is: $address}) {
-      balances {
-        value
-        usdValue: value(in: USD)
-        currency {
-          address
-          symbol
-          tokenType
-        }
-      }
-    }
-  }
   moonbeam: ethereum(network: moonbeam) {
     address(address: {is: $address}) {
       balances {
@@ -340,25 +327,6 @@ query ($address: String!) {
       amount
     }
   }
-  velas: ethereum(network: velas) {
-    transfers(
-      any: [{sender: {is: $address}}, {receiver: {is: $address}}]
-      options: {limit: 100}
-    ) {
-      amount
-      sender {
-        address
-      }
-      receiver {
-        address
-      }
-      currency {
-        name
-        symbol
-      }
-      amount
-    }
-  }
   moonbeam: ethereum(network: moonbeam) {
     transfers(
       any: [{sender: {is: $address}}, {receiver: {is: $address}}]
@@ -500,15 +468,6 @@ query ($limit: Int!, $offset: Int!, $from: ISO8601DateTime, $till: ISO8601DateTi
     }
   }
   matic: ethereum(network: matic) {
-    dexTrades(
-      options: {desc: "count", limit: $limit, offset: $offset}
-      date: {since: $from, till: $till}
-      makerOrTaker: {is: $address}
-    ) {
-      ...TradeInfo
-    }
-  }
-  velas: ethereum(network: velas) {
     dexTrades(
       options: {desc: "count", limit: $limit, offset: $offset}
       date: {since: $from, till: $till}

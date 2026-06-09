@@ -478,17 +478,6 @@ const sidebars = {
             },
             {
               type: "category",
-              label: "Velas",
-              items: [
-                "Examples/velas/calls",
-                "Examples/velas/events",
-                "Examples/velas/trades",
-                "Examples/velas/transactions",
-                "Examples/velas/transfers",
-              ],
-            },
-            {
-              type: "category",
               label: "Zcash",
               items: [
                 "Examples/Zcash/address-api",

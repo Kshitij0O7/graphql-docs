@@ -55,7 +55,7 @@ headers = {
 'X-API-KEY': BITQUERY_API_KEY
 }
 
-In our case, we're interested in Ethereum, Binance Smart Chain (BSC), Cronos, Celo, Matic, Velas, Moonbeam, Fantom, Avalanche, and Klaytn. We define a function get_cross_chain_data(address) to query balance data for a given wallet address across multiple chains using GraphQL.
+In our case, we're interested in Ethereum, Binance Smart Chain (BSC), Cronos, Celo, Matic, Moonbeam, Fantom, Avalanche, and Klaytn. We define a function get_cross_chain_data(address) to query balance data for a given wallet address across multiple chains using GraphQL.
 
 def get_cross_chain_data(address):
 query = """
@@ -113,19 +113,6 @@ query ($address: String!) {
     }
   }
   matic: ethereum(network: matic) {
-    address(address: {is: $address}) {
-      balances {
-        value
-        usdValue: value(in: USD)
-        currency {
-          address
-          symbol
-          tokenType
-        }
-      }
-    }
-  }
-  velas: ethereum(network: velas) {
     address(address: {is: $address}) {
       balances {
         value
