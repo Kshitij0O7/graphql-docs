@@ -4,6 +4,10 @@ description: "Example GraphQL queries for Algorand smart contract arguments on c
 keywords: [Algorand API examples, Algorand GraphQL queries, Bitquery]
 ---
 
+<head>
+  <link rel="canonical" href="https://docs.bitquery.io/docs/blockchain/Algorand/algorand-arguments-api/" />
+</head>
+
 # Algorand Arguments API
 
 Retrieve argument names, types, and values from Algorand smart contract calls and events.

@@ -4,6 +4,10 @@ description: "Example GraphQL queries for Algorand blocks. Get proposers, reward
 keywords: [Algorand API examples, Algorand GraphQL queries, Bitquery]
 ---
 
+<head>
+  <link rel="canonical" href="https://docs.bitquery.io/docs/blockchain/Algorand/algorand-blocks-api/" />
+</head>
+
 # Algorand Blocks API
 
 Query Algorand block data including proposer addresses, rewards, protocol versions, and timestamps using the Blocks API.

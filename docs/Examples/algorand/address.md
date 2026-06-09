@@ -4,6 +4,10 @@ description: "Example GraphQL queries for Algorand addresses. Get balances, asse
 keywords: [Algorand API examples, Algorand GraphQL queries, Bitquery]
 ---
 
+<head>
+  <link rel="canonical" href="https://docs.bitquery.io/docs/blockchain/Algorand/algorand-address-api/" />
+</head>
+
 # Algorand Address API
 
 Look up Algorand address balances, assets, and smart contract details using the Address API.

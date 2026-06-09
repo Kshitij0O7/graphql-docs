@@ -4,6 +4,10 @@ description: "Example GraphQL queries for Algorand coinpath. Trace senders, rece
 keywords: [Algorand API examples, Algorand GraphQL queries, Bitquery]
 ---
 
+<head>
+  <link rel="canonical" href="https://docs.bitquery.io/docs/blockchain/Algorand/algorand-coinpath-api/" />
+</head>
+
 # Algorand Coinpath API
 
 Trace the flow of funds between Algorand addresses using the Coinpath API, including sender-receiver paths, transaction depths, and amounts.
