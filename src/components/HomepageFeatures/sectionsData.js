@@ -58,7 +58,12 @@ export const startHereSteps = [
     step: "Step 01",
     title: "Get a free token",
     body: "Create an account and generate an API access token — no card, free tier included.",
-    codeParts: [{ text: "X-API-KEY: " }, { text: "<your-token>", cls: "c2" }],
+    codeParts: [
+      { text: "Authorization: " },
+      { text: "Bearer", cls: "c1" },
+      { text: " " },
+      { text: "<access_token>", cls: "c2" },
+    ],
     linkLabel: "Create token",
     href: accessTokenUrl,
     external: true,
