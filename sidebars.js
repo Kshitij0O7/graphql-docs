@@ -356,55 +356,14 @@ const sidebars = {
                 "Examples/Transactions/Trace_API",
               ],
             },
-            {
-              type: "category",
-              label: "Algorand",
-              items: [
-                "Examples/algorand/address",
-                "Examples/algorand/arguments",
-                "Examples/algorand/blocks",
-                "Examples/algorand/coinpath",
-                "Examples/algorand/smartContractCalls",
-                "Examples/algorand/transactions",
-                "Examples/algorand/transfers",
-              ],
-            },
+            "Examples/algorand/index",
             {
               type: "category",
               label: "Avalanche",
               items: ["Examples/avalanche/avax-trades-api"],
             },
-            {
-              type: "category",
-              label: "Bitcoin",
-              link: {
-                type: "doc",
-                id: "Examples/bitcoin/index",
-              },
-
-              items: [
-                "Examples/bitcoin/Bitcoin-Blocks-API",
-                "Examples/bitcoin/Bitcoin-Coinpath-API",
-                "Examples/bitcoin/bitcoin-fee-api",
-                "Examples/bitcoin/Bitcoin-Input-and-Output API",
-                "Examples/bitcoin/Bitcoin-OmniTransactions-and-OmniTransfers API",
-                "Examples/bitcoin/Bitcoin-Transaction-API",
-                "Examples/bitcoin/bitcoin-address-api",
-              ],
-            },
-            {
-              type: "category",
-              label: "Cardano",
-              items: [
-                "Examples/cardano/blocks",
-                "Examples/cardano/transactions",
-                "Examples/cardano/inputs-outputs",
-                "Examples/cardano/mints",
-                "Examples/cardano/coinpath",
-                "Examples/cardano/address",
-                "Examples/cardano/djed",
-              ],
-            },
+            "Examples/bitcoin/index",
+            "Examples/cardano/index",
             {
               type: "category",
               label: "Celo",
