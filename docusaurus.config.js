@@ -142,6 +142,12 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: "dark",
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
+      },
+
       // Replace with your project's social card
       image: "img/heroImage4.png",
       navbar: {
@@ -177,6 +183,7 @@ const config = {
             to: "https://account.bitquery.io/user/api_v2/access_tokens",
             label: "Get your free Access Token",
             position: "right",
+            className: "button button--primary bright-white-text",
           },
           {
             to: "https://lite.bitquery.io/",
