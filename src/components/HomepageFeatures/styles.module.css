@@ -4,7 +4,7 @@
 
 .home {
   background: var(--bq-page-bg);
-  color: #fff;
+  color: var(--bq-text);
 }
 
 .pageShell {
@@ -687,20 +687,155 @@
 }
 
 :global(html[data-theme="light"]) .home {
-  background: #f7f7f8;
-  color: #06090d;
+  background: var(--bq-page-bg);
+  color: var(--bq-text);
 }
 
-:global(html[data-theme="light"]) .dcard,
-:global(html[data-theme="light"]) .step,
-:global(html[data-theme="light"]) .ch {
-  background: #fff;
+:global(html[data-theme="light"]) .startHead h2,
+:global(html[data-theme="light"]) .step h3 {
+  color: #fff;
+}
+
+:global(html[data-theme="light"]) .startHead p,
+:global(html[data-theme="light"]) .step p {
+  color: #c8cdd6;
+}
+
+:global(html[data-theme="light"]) .step {
+  background: #0c121c;
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 :global(html[data-theme="light"]) .secHead h2,
-:global(html[data-theme="light"]) .dcard h3,
+:global(html[data-theme="light"]) .dcard h3 {
+  color: var(--bq-text);
+}
+
+:global(html[data-theme="light"]) .sk,
+:global(html[data-theme="light"]) .secHead p,
+:global(html[data-theme="light"]) .dcard p {
+  color: var(--bq-grey);
+}
+
+:global(html[data-theme="light"]) .startHead p {
+  color: #c8cdd6;
+}
+
+:global(html[data-theme="light"]) .dcard,
+:global(html[data-theme="light"]) .ch {
+  background: #fff;
+  border-color: var(--bq-line);
+}
+
+:global(html[data-theme="light"]) .dcard:hover,
+:global(html[data-theme="light"]) .ch:hover {
+  border-color: rgba(6, 9, 13, 0.2);
+  background: #f7f7f8;
+}
+
+:global(html[data-theme="light"]) .tlnk {
+  color: var(--bq-teal);
+}
+
+:global(html[data-theme="light"]) .arg {
+  color: var(--bq-dark-grey);
+}
+
+:global(html[data-theme="light"]) .ch {
+  color: var(--bq-text);
+}
+
+:global(html[data-theme="light"]) .chMore {
+  color: var(--bq-teal);
+  background: rgba(0, 122, 128, 0.06);
+  border-color: rgba(0, 122, 128, 0.2);
+}
+
+:global(html[data-theme="light"]) .coinpath {
+  background: linear-gradient(140deg, #e8f4f5, #f5eef2);
+  border-color: var(--bq-line);
+}
+
 :global(html[data-theme="light"]) .coinpath h2 {
-  color: #06090d;
+  color: var(--bq-text);
+}
+
+:global(html[data-theme="light"]) .coinpath p,
+:global(html[data-theme="light"]) .cpList li {
+  color: var(--bq-grey);
+}
+
+:global(html[data-theme="light"]) .cpList li b {
+  color: var(--bq-text);
+}
+
+:global(html[data-theme="light"]) .flowviz {
+  background: #fff;
+  border-color: var(--bq-line);
+}
+
+:global(html[data-theme="light"]) .fnode {
+  background: #f7f7f8;
+  color: var(--bq-dark-grey);
+  border-color: var(--bq-line);
+}
+
+:global(html[data-theme="light"]) .migrate {
+  background: rgba(0, 41, 255, 0.04);
+  border-color: rgba(0, 41, 255, 0.14);
+}
+
+:global(html[data-theme="light"]) .mt h3 {
+  color: var(--bq-text);
+}
+
+:global(html[data-theme="light"]) .mt p {
+  color: var(--bq-grey);
+}
+
+:global(html[data-theme="light"]) .mt p b {
+  color: var(--bq-text);
+}
+
+:global(html[data-theme="light"]) .cardLnk,
+:global(html[data-theme="light"]) .slnk {
+  color: var(--bq-accent-strong);
+}
+
+:global(html[data-theme="light"]) .ck2 {
+  color: var(--bq-teal-muted);
+}
+
+:global(html[data-theme="light"]) .ic {
+  color: var(--bq-teal);
+  background: rgba(0, 122, 128, 0.08);
+}
+
+:global(html[data-theme="light"]) .tool .ti {
+  background: rgba(0, 122, 128, 0.08);
+  border-color: rgba(0, 122, 128, 0.2);
+}
+
+:global(html[data-theme="light"]) .tool .ti svg {
+  color: var(--bq-teal-muted);
+}
+
+:global(html[data-theme="light"]) .fconn {
+  color: var(--bq-dark-grey);
+}
+
+:global(html[data-theme="light"]) .block {
+  border-color: var(--bq-line-2);
+}
+
+:global(html[data-theme="light"]) .bqBtnSecondary {
+  color: var(--bq-text);
+  border-color: var(--bq-cta-secondary);
+}
+
+:global(html[data-theme="light"]) .bqBtnSecondary:hover {
+  color: var(--bq-text);
+  background: rgba(147, 37, 75, 0.08);
 }
 
 @media (prefers-reduced-motion: reduce) {
